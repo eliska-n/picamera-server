@@ -1,6 +1,7 @@
 import asab
 import logging
 import picamera
+import time
 
 L = logging.getLogger(__name__)
 
@@ -14,5 +15,7 @@ class CaptureService(asab.Service):
 		image_name = "img_{}.jpeg".format(self.App.time())
 		with picamera.PiCamera() as camera:
 			camera.resolution = (640, 480)
+			camera.start_preview()
+			time.sleep(2)
 			camera.capture("./data/" + image_name)
 		return image_name

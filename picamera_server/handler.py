@@ -33,10 +33,12 @@ class PiCamHandler:
 
 	async def capture(self, request):
 		image_name = self.App.CaptureService.capture()
-		return aiohttp.web.Response(json={"image_name": image_name})
+		print(image_name)
+		return aiohttp.web.json_response({"image_name": image_name})
 
 	async def get_image(self, request):
 		image_name = request.match_info["image_name"]
+		print(image_name)
 		template = self.Jinja2Env.get_template("show_image.html")
 		return aiohttp.web.Response(
 			body=template.render({"image_path": "./data/{}".format(image_name)}),
