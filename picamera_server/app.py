@@ -2,6 +2,7 @@ import asab
 import asab.web
 
 from .stream_service import StreamService
+from .capture_service import CaptureService
 from .handler import PiCamHandler
 
 
@@ -11,9 +12,8 @@ class PiCameraApp(asab.Application):
 		self.add_module(asab.web.Module)
 
 		self.WebService = self.get_service("asab.WebService")
-		self.WebContainer = asab.web.WebContainer(
-                        self.WebService, "web"
-                )
-		
+		self.WebContainer = asab.web.WebContainer(self.WebService, "web")
+
 		self.StreamService = StreamService(self)
+		self.CaptureService = CaptureService(self)
 		self.Handler = PiCamHandler(self, self.StreamService)
