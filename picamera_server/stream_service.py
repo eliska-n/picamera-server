@@ -14,7 +14,7 @@ class StreamService(asab.Service):
 		self.Camera.resolution = (640, 480)
 
 	def get_frame(self):
-		img = self.Camera.capture()
+		img = self.Camera.capture("./data/img.jpeg")
 		print(img)
 		return img
 

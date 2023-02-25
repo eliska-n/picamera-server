@@ -1,2 +1,4 @@
 .vscode/
 local.conf
+data/
+__pycache__/

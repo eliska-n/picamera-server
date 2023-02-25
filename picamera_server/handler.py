@@ -7,7 +7,7 @@ L = logging.getLogger(__name__)
 #
 
 
-class OrchestratorHandler:
+class PiCamHandler:
 
 	def __init__(self, app, svc):
 		web_app = app.WebContainer.WebApp
@@ -22,4 +22,4 @@ class OrchestratorHandler:
 
 	async def shoot_a_photo(self, request):
 		frame = self.StreamService.get_frame()
-		return aiohttp.web.Response("shooting")
+		return aiohttp.web.Response(text="shooting")
