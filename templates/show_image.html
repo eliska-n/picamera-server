@@ -10,6 +10,7 @@
 	  /* custom styles go here */
 	  body {
 		background-color: #f8f9fa;
+		justify-content: center;
 	  }
 	  .main-container {
 		max-width: 800px;
@@ -20,6 +21,9 @@
 		padding: 20px;
 		border-radius: 10px;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	  }
 	  .image {
 		max-width: 100%;
@@ -29,12 +33,11 @@
 	<title>Praise the salad!</title>
 </head>
   <body>
+	<h1> This is your picture </h1>
 	<div class="main-container">
 	  <div class="row">
-		<div class="col-md-6 offset-md-3">
 		  <div class="image-container">
 			<img class="image" src="{{image_path}}" alt="Praise the salad!">
-		  </div>
 		</div>
 	  </div>
 	</div>
