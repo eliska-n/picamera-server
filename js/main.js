@@ -12,7 +12,7 @@ function capture() {
 	.then(responseData => {
 	  // handle the response data here
 	  imageName = responseData.image_name
-	  window.location.href = '/image/${imageName}';
+	  window.location.href = `/image/${imageName}`;
 	})
 	.catch(error => {
 	  console.error('There was a problem with the fetch operation:', error);
