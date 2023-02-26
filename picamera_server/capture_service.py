@@ -14,8 +14,9 @@ class CaptureService(asab.Service):
 	def capture(self):
 		image_name = "img_{}.jpeg".format(self.App.time())
 		with picamera.PiCamera() as camera:
-			camera.resolution = (640, 480)
+			camera.resolution = (1024, 768)
+			camera.rotation = 180
 			camera.start_preview()
-			time.sleep(2)
+			time.sleep(1)
 			camera.capture("./data/" + image_name)
 		return image_name
